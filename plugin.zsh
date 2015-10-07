@@ -26,10 +26,10 @@ function _pr_usage {
   echo "      (-v)                          \\- (optional) include commit hash and clone url"
   echo "  install                        -- install plugins. One of the following options required"
   echo "      -a                            |- all of the currently uninstalled plugins"
-  echo "      name                          \\- only the known plugin"
+  echo "      name*                         \\- only the known plugin(s)"
   echo "  uninstall                      -- uninstall a plugin"
   echo "      -a                            |- all of the currently installed plugins"
-  echo "      name                          \\- only the specified plugin"
+  echo "      name*                         \\- only the specified plugin(s)"
   echo "  add name git-url               -- add and install the named plugin"
   echo "      [hash]                        \\- (optional) at the specified commit hash (master otherwise)"
   echo "  remove name                    -- uninstall and remove the named plugin"
@@ -84,12 +84,11 @@ function _install_one {
 
   plugin_dir="$BUNDLE_DIR/$plugin_name"
   if [ -d "$plugin_dir" ]; then
-    _pr_note "$plugin_name already installed at $plugin_dir"; exit 0
+    _pr_note "$plugin_name already installed at $plugin_dir"; return 0
   fi
 
   if known_plugin_line=`grep "^$plugin_name," $PLUGINS_FILE` ; then
-    # already know about it
-    _pr_header "loading known plugin"
+    _pr_header "Installing $plugin_name"
 
     echo "$known_plugin_line" | IFS=, read plugin_name clone_url commit
 
@@ -100,26 +99,35 @@ function _install_one {
 
     _install_checkout "$plugin_name" "$clone_url" "$commit"
   else
-    _pr_error "Unknown plugin '$plugin_name'. Try adding it first."; exit 1
+    _pr_error "Unknown plugin '$plugin_name'. Try adding it first."; return 1
+  fi
+}
+
+function _install_one_and_log {
+  plugin_name=$1
+
+  if [[ -z "$plugin_name" ]]; then
+    _pr_error "Must provide plugin-name"; _pr_usage; exit 1
+  fi
+
+  echo -n $plugin_name
+  if [[ -d "$BUNDLE_DIR/$plugin_name" ]]; then
+    echo " - (already installed)"
+  else
+    if output="$(_install_one $plugin_name 2>&1)"; then
+      echo " - INSTALLED"
+      echo "$output" | sed -e 's/^/    /'
+    else
+      echo " - ERROR"
+      echo "$output" | sed -e 's/^/    /' >&2
+    fi
   fi
 }
 
 function _install_all {
   if [[ -s $PLUGINS_FILE ]]; then
     cat "$PLUGINS_FILE" | while IFS=, read plugin_name clone_url commit; do
-      echo -n $plugin_name
-      if [[ -d "$BUNDLE_DIR/$plugin_name" ]]; then
-        echo " - (already installed)"
-      else
-        if output="$(_install_one $plugin_name 2>&1)"; then
-          echo " - INSTALLED"
-          echo "$output" | sed -e 's/^/    /'
-        else
-          echo " - ERROR"
-          echo "$output" | sed -e 's/^/    /' >&2
-          exit 1
-        fi
-      fi
+      _install_one_and_log $plugin_name
     done
   else
     _pr_note "No plugins defined"
@@ -135,7 +143,9 @@ function _install {
       _install_all
       ;;
     (*)
-      _install_one $1
+      for plugin_name in "$@"; do
+        _install_one_and_log $plugin_name
+      done
       ;;
   esac
 }
@@ -156,22 +166,32 @@ function _uninstall_one {
   fi
 }
 
+function _uninstall_one_and_log {
+  plugin_name=$1
+
+  if [[ -z "$plugin_name" ]]; then
+    _pr_error "Must provide plugin-name"; _pr_usage; exit 1
+  fi
+
+  echo -n $plugin_name
+  if [[ -d "$BUNDLE_DIR/$plugin_name" ]]; then
+    if output="$(_uninstall_one $plugin_name 2>&1)"; then
+      echo " - UNINSTALLED"
+      echo "$output" | sed -e 's/^/    /'
+    else
+      echo " - ERROR"
+      echo "$output" | sed -e 's/^/    /' >&2
+      exit 1
+    fi
+  else
+    echo " - (not installed)"
+  fi
+}
+
 function _uninstall_all {
   if [[ -s $PLUGINS_FILE ]]; then
     cat "$PLUGINS_FILE" | while IFS=, read plugin_name clone_url commit; do
-      echo -n $plugin_name
-      if [[ -d "$BUNDLE_DIR/$plugin_name" ]]; then
-        if output="$(_uninstall_one $plugin_name 2>&1)"; then
-          echo " - UNINSTALLED"
-          echo "$output" | sed -e 's/^/    /'
-        else
-          echo " - ERROR"
-          echo "$output" | sed -e 's/^/    /' >&2
-          exit 1
-        fi
-      else
-        echo " - (not installed)"
-      fi
+      _uninstall_one_and_log $plugin_name
     done
   else
     _pr_note "No plugins defined"
@@ -187,7 +207,9 @@ function _uninstall {
       _uninstall_all
       ;;
     (*)
-      _uninstall_one $1
+      for plugin_name in "$@"; do
+        _uninstall_one_and_log $plugin_name
+      done
       ;;
   esac
 }
@@ -226,7 +248,7 @@ function _add {
 
     plugin_dir="$BUNDLE_DIR/$plugin_name"
     if [ -d "$plugin_dir" ]; then
-      _pr_note "$plugin_name already installed at $plugin_dir"; exit 0
+      _pr_note "$plugin_name already installed at $plugin_dir"; return 0
     fi
 
     if [ -z "$commit" ]; then
