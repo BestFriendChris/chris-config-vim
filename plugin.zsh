@@ -27,8 +27,12 @@ function _pr_usage {
   echo "  install                        -- install plugins. One of the following options required"
   echo "      -a                            |- all of the currently uninstalled plugins"
   echo "      name                          \\- only the known plugin"
+  echo "  uninstall                      -- uninstall a plugin"
+  echo "      -a                            |- all of the currently installed plugins"
+  echo "      name                          \\- only the specified plugin"
   echo "  add name git-url               -- add and install the named plugin"
   echo "      [hash]                        \\- (optional) at the specified commit hash (master otherwise)"
+  echo "  remove name                    -- uninstall and remove the named plugin"
   echo "  edit                           -- edit the 'plugins' file manually"
 }
 
@@ -116,7 +120,6 @@ function _install_all {
           exit 1
         fi
       fi
-
     done
   else
     _pr_note "No plugins defined"
@@ -124,10 +127,6 @@ function _install_all {
 }
 
 function _install {
-  plugin_name=$1
-  clone_url=$2
-  commit=$3
-
   case $1 in
     ("")
       _pr_error "Must provide plugin-name"; _pr_usage; exit 1
@@ -137,6 +136,58 @@ function _install {
       ;;
     (*)
       _install_one $1
+      ;;
+  esac
+}
+
+function _uninstall_one {
+  plugin_name=$1
+
+  if [[ -z "$plugin_name" ]]; then
+    _pr_error "Must provide plugin-name"; _pr_usage; exit 1
+  fi
+
+  plugin_dir="$BUNDLE_DIR/$plugin_name"
+  if [ -d "$plugin_dir" ]; then
+    rm -rf "$plugin_dir"
+    _pr_header "Plugin '$plugin_name' uninstalled"
+  else
+    _pr_note "$plugin_name not currently installed"
+  fi
+}
+
+function _uninstall_all {
+  if [[ -s $PLUGINS_FILE ]]; then
+    cat "$PLUGINS_FILE" | while IFS=, read plugin_name clone_url commit; do
+      echo -n $plugin_name
+      if [[ -d "$BUNDLE_DIR/$plugin_name" ]]; then
+        if output="$(_uninstall_one $plugin_name 2>&1)"; then
+          echo " - UNINSTALLED"
+          echo "$output" | sed -e 's/^/    /'
+        else
+          echo " - ERROR"
+          echo "$output" | sed -e 's/^/    /' >&2
+          exit 1
+        fi
+      else
+        echo " - (not installed)"
+      fi
+    done
+  else
+    _pr_note "No plugins defined"
+  fi
+}
+
+function _uninstall {
+  case $1 in
+    ("")
+      _pr_error "Must provide plugin-name"; _pr_usage; exit 1
+      ;;
+    ("-a")
+      _uninstall_all
+      ;;
+    (*)
+      _uninstall_one $1
       ;;
   esac
 }
@@ -190,6 +241,26 @@ function _add {
 
 }
 
+function _remove {
+  plugin_name=$1
+
+  if [[ -z "$plugin_name" ]]; then
+    _pr_error "Must provide plugin-name"; _pr_usage; exit 1
+  fi
+
+  if grep "^$plugin_name," "$PLUGINS_FILE" >/dev/null 2>&1 ; then
+    _uninstall_one $plugin_name
+    _pr_header "Removing '$plugin_name' from the plugins file"
+    sed -i "/^$plugin_name,/d" "$PLUGINS_FILE"
+
+    _pr_header "Plugins file updated. Listing plugins"
+    _list
+  else
+    _pr_error "$plugin_name not recorded"; exit 1
+  fi
+
+}
+
 function _edit {
   if [[ -z "$EDITOR" ]]; then
     EDITOR=vim
@@ -197,7 +268,7 @@ function _edit {
 
   $EDITOR $PLUGINS_FILE
 
-  _pr_header "Plugins file update. Listing plugins"
+  _pr_header "Plugins file updated. Listing plugins"
   _list
 }
 
@@ -205,7 +276,7 @@ case $1 in
   ("")
     _pr_usage; exit 0
     ;;
-  (list)
+  (ls | list)
     shift
     _list $@
     exit 0
@@ -215,9 +286,19 @@ case $1 in
     _install $@
     exit 0
     ;;
+  (uninstall)
+    shift
+    _uninstall $@
+    exit 0
+    ;;
   (add)
     shift
     _add $@
+    exit 0
+    ;;
+  (rm | remove)
+    shift
+    _remove $@
     exit 0
     ;;
   (edit)
