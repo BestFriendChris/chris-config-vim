@@ -1,4 +1,4 @@
-execute pathogen#infect()
+execute pathogen#infect('bundle-modifications/{}', 'bundle/{}')
 syntax on
 filetype plugin indent on
 
