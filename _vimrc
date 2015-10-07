@@ -47,6 +47,8 @@ set visualbell
 
 set encoding=utf-8
 
+set wildmode=list:full
+
 colorscheme desert
 
 let maplocalleader=","
