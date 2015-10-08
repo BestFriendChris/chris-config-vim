@@ -47,7 +47,7 @@ set visualbell
 
 set encoding=utf-8
 
-set wildmode=list:full
+set wildmode=list:longest
 
 colorscheme desert
 
