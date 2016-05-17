@@ -3,3 +3,4 @@ if !exists("loaded_nerd_tree")
 endif
 
 nmap <M-?> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen = 1
