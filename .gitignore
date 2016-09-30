@@ -1,2 +1,5 @@
 /_vim/swp/*
 /_vim/bundle/*
+/.cache/*
+/.viminfo
+/.NERDTreeBookmarks
