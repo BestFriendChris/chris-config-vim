@@ -61,6 +61,7 @@ function _install_checkout {
   plugin_name=$1
   clone_url=$2
   commit=$3
+  message=$4
 
   if [ -z "$clone_url" ]; then
     _pr_error "Must provide a clone_url"; exit 1
@@ -73,6 +74,15 @@ function _install_checkout {
   cd "$BUNDLE_DIR/$plugin_name"
   _pr_header "Checking out commit $commit"
   git checkout -q "$commit"
+
+  if [[ -n "$message" ]]; then
+    echo
+    echo "******** Post installation message ********"
+    echo
+    echo $message
+    echo
+    echo "*******************************************"
+  fi
 }
 
 function _install_one {
@@ -90,14 +100,14 @@ function _install_one {
   if known_plugin_line=`grep "^$plugin_name," $PLUGINS_FILE` ; then
     _pr_header "Installing $plugin_name"
 
-    echo "$known_plugin_line" | IFS=, read plugin_name clone_url commit
+    echo "$known_plugin_line" | IFS=, read plugin_name clone_url commit message
 
     if [ -z "$commit" ]; then
       _pr_note "commit not provided; defaulting to 'master'"
       commit="master"
     fi
 
-    _install_checkout "$plugin_name" "$clone_url" "$commit"
+    _install_checkout "$plugin_name" "$clone_url" "$commit" "$message"
   else
     _pr_error "Unknown plugin '$plugin_name'. Try adding it first."; return 1
   fi
