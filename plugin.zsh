@@ -75,6 +75,11 @@ function _install_checkout {
   _pr_header "Checking out commit $commit"
   git checkout -q "$commit"
 
+  if [[ -f "$BUNDLE_DIR/$plugin_name/.gitmodules" ]]; then
+    _pr_header "Updating submodules"
+    git submodule update --init --recursive
+  fi
+
   if [[ -n "$message" ]]; then
     echo
     echo "******** Post installation message ********"
