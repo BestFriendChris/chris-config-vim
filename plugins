@@ -2,6 +2,7 @@ YouCompleteMe,https://github.com/Valloric/YouCompleteMe.git,f928f7dd975d26b608d5
 bufexplorer,https://github.com/jlanzarotta/bufexplorer.git,ad2cff7615ff9e5d274d588a4263d18e5bea8949
 ctrlp,https://github.com/kien/ctrlp.vim,b5d3fe66a58a13d2ff8b6391f4387608496a030f
 nerdtree,https://github.com/scrooloose/nerdtree.git,0b44415a3302030b56755cc1135ca9ca57dc1ada
+tsuquyomi,https://github.com/Quramy/tsuquyomi.git,c8798618745743be53babf7105729ff531d3dcce
 typescript-vim,https://github.com/leafgarland/typescript-vim.git,7e25a901af7cd993498cc9ecfc833ca2ac21db7a
 vim-airline,https://github.com/bling/vim-airline.git,2637e3ee58856f42cafa0f0094215e6d85d409dd
 vim-easymotion,https://github.com/easymotion/vim-easymotion,0806257ca6432ac7beb75c4319dadf7f3ba9907b
@@ -10,3 +11,4 @@ vim-json,https://github.com/elzr/vim-json,f5e3181d0b33a9c51377bb7ea8492feddca8b5
 vim-repeat,https://github.com/tpope/vim-repeat.git,7a6675f092842c8f81e71d5345bd7cdbf3759415
 vim-surround,https://github.com/tpope/vim-surround.git,2d05440ad23f97a7874ebd9b5de3a0e65d25d85c
 vimoutliner,https://github.com/vimoutliner/vimoutliner.git,cb41cfd6d636e1243e7e9c46b35fc5cb50588069
+vimproc.vim,https://github.com/Shougo/vimproc.vim.git,25cb83f24edec4aec1e9f1329302235e7a7a7fe0,$ (cd _vim/bundle/vimproc.vim; make)
