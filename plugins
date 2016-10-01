@@ -2,6 +2,7 @@ YouCompleteMe,https://github.com/Valloric/YouCompleteMe.git,f928f7dd975d26b608d5
 bufexplorer,https://github.com/jlanzarotta/bufexplorer.git,ad2cff7615ff9e5d274d588a4263d18e5bea8949
 ctrlp,https://github.com/kien/ctrlp.vim,b5d3fe66a58a13d2ff8b6391f4387608496a030f
 nerdtree,https://github.com/scrooloose/nerdtree.git,0b44415a3302030b56755cc1135ca9ca57dc1ada
+typescript-vim,https://github.com/leafgarland/typescript-vim.git,7e25a901af7cd993498cc9ecfc833ca2ac21db7a
 vim-airline,https://github.com/bling/vim-airline.git,2637e3ee58856f42cafa0f0094215e6d85d409dd
 vim-easymotion,https://github.com/easymotion/vim-easymotion,0806257ca6432ac7beb75c4319dadf7f3ba9907b
 vim-javascript,https://github.com/pangloss/vim-javascript.git,d7f4728f830173d5894009771432d329d9098f17
