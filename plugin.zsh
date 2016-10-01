@@ -160,7 +160,7 @@ function _install_one_and_log {
 function _install_all {
   if [[ -s $PLUGINS_FILE ]]; then
     cat "$PLUGINS_FILE" | while IFS=, read plugin_name clone_url commit; do
-      _install_one_and_log $plugin_name
+      _install_one $plugin_name
     done
   else
     _pr_note "No plugins defined"
@@ -177,7 +177,7 @@ function _install {
       ;;
     (*)
       for plugin_name in "$@"; do
-        _install_one_and_log $plugin_name
+        _install_one $plugin_name
       done
       ;;
   esac
