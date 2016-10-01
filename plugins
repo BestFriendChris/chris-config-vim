@@ -12,4 +12,4 @@ vim-json,https://github.com/elzr/vim-json,f5e3181d0b33a9c51377bb7ea8492feddca8b5
 vim-repeat,https://github.com/tpope/vim-repeat.git,7a6675f092842c8f81e71d5345bd7cdbf3759415
 vim-surround,https://github.com/tpope/vim-surround.git,2d05440ad23f97a7874ebd9b5de3a0e65d25d85c
 vimoutliner,https://github.com/vimoutliner/vimoutliner.git,cb41cfd6d636e1243e7e9c46b35fc5cb50588069
-vimproc.vim,https://github.com/Shougo/vimproc.vim.git,25cb83f24edec4aec1e9f1329302235e7a7a7fe0,$ (cd _vim/bundle/vimproc.vim; make)
+vimproc.vim,https://github.com/Shougo/vimproc.vim.git,25cb83f24edec4aec1e9f1329302235e7a7a7fe0

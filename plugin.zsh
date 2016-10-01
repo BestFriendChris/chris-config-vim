@@ -4,6 +4,7 @@ set -e
 
 CWD="$(cd "$(dirname "$0")" && pwd)"
 PLUGINS_FILE="$CWD/plugins"
+PLUGINS_D_DIR="$CWD/plugins.d"
 BUNDLE_DIR="$CWD/_vim/bundle"
 
 NAME=$0
@@ -80,11 +81,28 @@ function _install_checkout {
     git submodule update --init --recursive
   fi
 
+  if [[ -d "$PLUGINS_D_DIR/$plugin_name" ]]; then
+    plugin_update_dir="$PLUGINS_D_DIR/$plugin_name"
+
+    if [[ -x "$plugin_update_dir/install.sh" ]]; then
+      (
+        _pr_header "Running post-installation script"
+
+        cd $plugin_update_dir
+        export PLUGIN_NAME="$plugin_name"
+        export PLUGIN_DIR="$BUNDLE_DIR/$plugin_name"
+
+        ./install.sh
+      )
+    fi
+
+  fi
+
   if [[ -n "$message" ]]; then
     echo
     echo "******** Post installation message ********"
     echo
-    echo $message
+    echo "$message"
     echo
     echo "*******************************************"
   fi
