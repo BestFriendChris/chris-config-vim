@@ -92,6 +92,10 @@ nmap ]] ]}
 " j/k
 imap jk <ESC>
 
+" Break undo sequence on newline or C-U line clearing
+inoremap <CR> <C-G>u<CR>
+inoremap <C-U> <C-G>u<C-U>
+
 " hate-hate-hate using K to open a man page
 nmap K <Nop>
 
