@@ -9,6 +9,7 @@ vim-airline,https://github.com/bling/vim-airline.git,2637e3ee58856f42cafa0f00942
 vim-bundler,https://github.com/tpope/vim-bundler.git,b42217a20cd4cac5a00096dc4e98d2497c21b3fe
 vim-commentary,https://github.com/tpope/vim-commentary.git,73e0d9a9d1f51b6cc9dc965f62669194ae851cb1
 vim-easymotion,https://github.com/easymotion/vim-easymotion,0806257ca6432ac7beb75c4319dadf7f3ba9907b
+vim-iterm-rspec,https://github.com/skwp/vim-iterm-rspec.git,df1a91b05b6dda14a00b89610ed2408be1736703
 vim-javascript,https://github.com/pangloss/vim-javascript.git,d7f4728f830173d5894009771432d329d9098f17
 vim-json,https://github.com/elzr/vim-json,f5e3181d0b33a9c51377bb7ea8492feddca8b503
 vim-obsession,https://github.com/tpope/vim-obsession.git,ad1ef9a0db9a03463b005b488fd27cb735317394
