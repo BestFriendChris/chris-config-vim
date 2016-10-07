@@ -306,7 +306,7 @@ function _remove {
   if grep "^$plugin_name," "$PLUGINS_FILE" >/dev/null 2>&1 ; then
     _uninstall_one $plugin_name
     _pr_header "Removing '$plugin_name' from the plugins file"
-    sed -i "/^$plugin_name,/d" "$PLUGINS_FILE"
+    sed -i '' "/^$plugin_name,/d" "$PLUGINS_FILE"
 
     _pr_header "Plugins file updated. Listing plugins"
     _list
