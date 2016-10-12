@@ -19,7 +19,7 @@ set hlsearch            " search highlighting
 set ignorecase          " Case doesn't matter
 set smartcase           " ... until it does
 
-set switchbuf=useopen   " Only have one buffer of a file open at a time
+set switchbuf=useopen,usetab,newtab " Open buffers in new tabs
 set hidden              " Keep buffers open in the background
 
 " Use spaces every 2 characters instead of tabs
