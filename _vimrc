@@ -67,6 +67,20 @@ map <C-K> <C-W>k
 " Navigate between tabs
 map <C-H> gT
 map <C-L> gt
+map <silent> g<C-H> :tabmove -1<CR>
+map <silent> g<C-L> :tabmove +1<CR>
+
+" Cmd-[1-9] will open that numbered tab
+map <silent> <D-1> <ESC>1gt
+map <silent> <D-2> <ESC>2gt
+map <silent> <D-3> <ESC>3gt
+map <silent> <D-4> <ESC>4gt
+map <silent> <D-5> <ESC>5gt
+map <silent> <D-6> <ESC>6gt
+map <silent> <D-7> <ESC>7gt
+map <silent> <D-8> <ESC>8gt
+map <silent> <D-9> <ESC>9gt
+map <silent> <D-0> <ESC>:tablast<CR>
 
 " Stop showing highlighted search results
 nmap <silent> <Leader><Space> :noh<CR>
