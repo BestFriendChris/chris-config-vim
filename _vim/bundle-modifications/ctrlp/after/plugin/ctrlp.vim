@@ -13,6 +13,7 @@ let g:ctrlp_custom_ignore = {
 if exists('g:loaded_rails')
   augroup ctrlp_bfc
     autocmd!
+    autocmd User Rails map <buffer> <Leader>ga :CtrlP app<CR>
     autocmd User Rails map <buffer> <Leader>gv :CtrlP app/views<CR>
     autocmd User Rails map <buffer> <Leader>gc :CtrlP app/controllers<CR>
     autocmd User Rails map <buffer> <Leader>gm :CtrlP app/models<CR>
