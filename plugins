@@ -8,6 +8,7 @@ typescript-vim,https://github.com/leafgarland/typescript-vim.git,7e25a901af7cd99
 vim-airline,https://github.com/bling/vim-airline.git,2637e3ee58856f42cafa0f0094215e6d85d409dd
 vim-bundler,https://github.com/tpope/vim-bundler.git,b42217a20cd4cac5a00096dc4e98d2497c21b3fe
 vim-commentary,https://github.com/tpope/vim-commentary.git,73e0d9a9d1f51b6cc9dc965f62669194ae851cb1
+vim-dispatch,https://github.com/tpope/vim-dispatch.git,a54f2c5e18b8c2aad8c6f8ba474760e70fdaaca3
 vim-easymotion,https://github.com/easymotion/vim-easymotion,0806257ca6432ac7beb75c4319dadf7f3ba9907b
 vim-filebeagle,https://github.com/jeetsukumaran/vim-filebeagle.git,c41b80190874c6112277323135c5fea0268e6978
 vim-iterm-rspec,https://github.com/skwp/vim-iterm-rspec.git,df1a91b05b6dda14a00b89610ed2408be1736703
