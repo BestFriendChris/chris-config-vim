@@ -1,11 +1,10 @@
-if !exists('g:loaded_youcompleteme')
+if !exists('g:loaded_youcompleteme') || exists('g:youcompleteme_disabled')
   finish
 endif
 
-if exists('g:loaded_youcompleteme_bfc')
-  finish
+if !exists('g:ycm_filetype_whitelist')
+  let g:ycm_filetype_whitelist = {}
 endif
-let g:loaded_youcompleteme_bfc = 1
 
 " Each plugin needs to opt in itself
-let g:ycm_filetype_whitelist = {}
+silent! unlet! g:ycm_filetype_whitelist['*']

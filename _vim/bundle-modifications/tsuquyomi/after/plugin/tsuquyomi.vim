@@ -22,8 +22,9 @@ endif
 augroup tsuquyomi_bfc
   autocmd!
   autocmd FileType typescript nmap <buffer> <silent> <LocalLeader>t : <C-u>echo tsuquyomi#hint()<CR>
-  autocmd FileType typescript let b:syntastic_check_on_wq = 0
-  autocmd FileType typescript let b:syntastic_always_populate_loc_list = 1
+                          \ | let b:syntastic_check_on_wq = 0
+                          \ | let b:syntastic_always_populate_loc_list = 1
+                          \ | silent! doauto User EnableYouCompleteMe
 augroup END
 
 let g:tsuquyomi_definition_split = 3 " TsuDefinition calls open in a new tab
