@@ -19,12 +19,13 @@ nnoremap <Leader>gq :CtrlPQuickfix<CR>
 if exists('g:loaded_rails')
   augroup ctrlp_bfc_rails
     autocmd!
-    autocmd User Rails map <buffer> <LocalLeader>ra :CtrlP app<CR>
-    autocmd User Rails map <buffer> <LocalLeader>rv :CtrlP app/views<CR>
-    autocmd User Rails map <buffer> <LocalLeader>rc :CtrlP app/controllers<CR>
-    autocmd User Rails map <buffer> <LocalLeader>rm :CtrlP app/models<CR>
-    autocmd User Rails map <buffer> <LocalLeader>rj :CtrlP app/jobs<CR>
-    autocmd User Rails map <buffer> <LocalLeader>rl :CtrlP lib<CR>
-    autocmd User Rails map <buffer> <LocalLeader>rs :CtrlP spec<CR>
+    autocmd User Rails noremap <buffer> <LocalLeader>ra :CtrlP app<CR>
+    autocmd User Rails noremap <buffer> <LocalLeader>rd :badd db/structure.sql<CR>:CtrlPLine db/structure.sql<CR>
+    autocmd User Rails noremap <buffer> <LocalLeader>rv :CtrlP app/views<CR>
+    autocmd User Rails noremap <buffer> <LocalLeader>rc :CtrlP app/controllers<CR>
+    autocmd User Rails noremap <buffer> <LocalLeader>rm :CtrlP app/models<CR>
+    autocmd User Rails noremap <buffer> <LocalLeader>rj :CtrlP app/jobs<CR>
+    autocmd User Rails noremap <buffer> <LocalLeader>rl :CtrlP lib<CR>
+    autocmd User Rails noremap <buffer> <LocalLeader>rs :CtrlP spec<CR>
   augroup END
 endif
