@@ -11,6 +11,7 @@ vim-commentary,https://github.com/tpope/vim-commentary.git,73e0d9a9d1f51b6cc9dc9
 vim-dispatch,https://github.com/tpope/vim-dispatch.git,a54f2c5e18b8c2aad8c6f8ba474760e70fdaaca3
 vim-easymotion,https://github.com/easymotion/vim-easymotion,0806257ca6432ac7beb75c4319dadf7f3ba9907b
 vim-filebeagle,https://github.com/jeetsukumaran/vim-filebeagle.git,c41b80190874c6112277323135c5fea0268e6978
+vim-fugitive,https://github.com/tpope/vim-fugitive.git,b3a8be6975dcc27b523b030bf5d35d9c737aef18
 vim-iterm-rspec,https://github.com/skwp/vim-iterm-rspec.git,df1a91b05b6dda14a00b89610ed2408be1736703
 vim-javascript,https://github.com/pangloss/vim-javascript.git,d7f4728f830173d5894009771432d329d9098f17
 vim-json,https://github.com/elzr/vim-json,f5e3181d0b33a9c51377bb7ea8492feddca8b503
