@@ -131,7 +131,9 @@ nmap <Leader><Leader> <C-^>
 nnoremap g/ /\v
 
 " Open tag in new tab
-nnoremap <Leader>] <C-W>]<C-W>T
+nnoremap <Leader>] :tab stjump <C-R><C-W><CR>
+" Open tag in preview
+nnoremap <Leader>[ :ptjump <C-R><C-W><CR>
 
 "--------------------------------------------------------------------------------
 " AUTOCMD
