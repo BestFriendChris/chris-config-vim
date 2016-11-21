@@ -1,6 +1,7 @@
 YouCompleteMe,https://github.com/Valloric/YouCompleteMe.git,f928f7dd975d26b608d5310a9139dc5fc310e4a9
 bufexplorer,https://github.com/jlanzarotta/bufexplorer.git,ad2cff7615ff9e5d274d588a4263d18e5bea8949
 ctrlp,https://github.com/kien/ctrlp.vim,b5d3fe66a58a13d2ff8b6391f4387608496a030f
+elm-vim,https://github.com/ElmCast/elm-vim.git,353d5f7a68b6c1eb06d504854887ab9853168b8e
 syntastic,https://github.com/scrooloose/syntastic.git,59cc80a8f7f7544a364814622dc62efd00d17ca4
 tsuquyomi,https://github.com/Quramy/tsuquyomi.git,c8798618745743be53babf7105729ff531d3dcce
 typescript-vim,https://github.com/leafgarland/typescript-vim.git,7e25a901af7cd993498cc9ecfc833ca2ac21db7a
