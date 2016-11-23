@@ -16,6 +16,7 @@ vim-iterm-rspec,https://github.com/skwp/vim-iterm-rspec.git,df1a91b05b6dda14a00b
 vim-javascript,https://github.com/pangloss/vim-javascript.git,d7f4728f830173d5894009771432d329d9098f17
 vim-json,https://github.com/elzr/vim-json,f5e3181d0b33a9c51377bb7ea8492feddca8b503
 vim-obsession,https://github.com/tpope/vim-obsession.git,ad1ef9a0db9a03463b005b488fd27cb735317394
+vim-racket,https://github.com/wlangstroth/vim-racket.git,f1c18825f1b86f1ace16c16ad36fd46b1532dac4
 vim-rails,https://github.com/tpope/vim-rails.git,80e03f766f5f049d6bd8998bd7b25b77ddaa9a1e
 vim-repeat,https://github.com/tpope/vim-repeat.git,7a6675f092842c8f81e71d5345bd7cdbf3759415
 vim-scriptease,https://github.com/tpope/vim-scriptease.git,b9720e64c676f0c747a3829e1f0b1b86daedefd8
