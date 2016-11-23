@@ -135,6 +135,9 @@ nnoremap <Leader>] :tab stjump <C-R><C-W><CR>
 " Open tag in preview
 nnoremap <Leader>[ :ptjump <C-R><C-W><CR>
 
+" Toggle fold
+nnoremap z<Space> zA
+
 "--------------------------------------------------------------------------------
 " AUTOCMD
 "--------------------------------------------------------------------------------
