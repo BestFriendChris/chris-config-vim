@@ -104,11 +104,15 @@ nmap [[ [{
 nmap ]] ]}
 
 " j/k
-imap jk <ESC>
+inoremap jk <ESC>
+cnoremap jk <C-c>
 
 " Break undo sequence on newline or C-U line clearing
 inoremap <CR> <C-G>u<CR>
 inoremap <C-U> <C-G>u<C-U>
+
+" Shift-Return will break undo and open the line above
+inoremap <S-CR> <C-G>u<ESC>O
 
 " hate-hate-hate using K to open a man page
 nmap K <Nop>
