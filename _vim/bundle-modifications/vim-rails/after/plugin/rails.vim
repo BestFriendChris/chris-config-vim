@@ -1,6 +1,9 @@
 if exists('g:loaded_rails')
   augroup bfc_rails_search
     autocmd!
+    " Support `foo?` and `@bar` keyword styles
+    autocmd User Rails setlocal iskeyword+=?,@-@
+
     " Search for instance variable
     autocmd User Rails nnoremap <buffer> <LocalLeader>si /@\<<C-R><C-W>\><CR>
 
