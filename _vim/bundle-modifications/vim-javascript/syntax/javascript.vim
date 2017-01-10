@@ -5,7 +5,7 @@ let g:vim_javascript_loaded_before = 1
 
 set foldmethod=syntax
 set foldlevel=100
-set cole=1
+set conceallevel=1
 
 hi Conceal NONE
 
@@ -20,4 +20,9 @@ let g:javascript_conceal_static         = "•"
 let g:javascript_conceal_super          = "Ω"
 let g:javascript_conceal_arrow_function = "→"
 
-nnoremap <buffer> <Space> za
+augroup javascript_bfc
+  autocmd!
+
+  autocmd FileType javascript nnoremap <buffer> <Space> za
+  autocmd FileType javascript nnoremap <buffer> <LocalLeader>c :let &conceallevel = !&conceallevel<CR>
+augroup END
