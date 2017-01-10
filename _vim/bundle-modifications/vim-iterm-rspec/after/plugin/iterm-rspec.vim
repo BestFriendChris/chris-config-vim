@@ -5,11 +5,11 @@ if has("gui_running")
     autocmd!
 
     if exists(":RunItermSpec")
-      autocmd User Rails nmap <silent> <buffer> <D-R> :RunItermSpringSpec<CR>
+      autocmd User Rails nmap <silent> <buffer> <D-R> :RunItermSpec<CR>
     endif
 
     if exists(":RunItermSpecLine")
-      autocmd User Rails nmap <silent> <buffer> <D-L> :RunItermSpringSpecLine<CR>
+      autocmd User Rails nmap <silent> <buffer> <D-L> :RunItermSpecLine<CR>
     endif
 
   augroup END
