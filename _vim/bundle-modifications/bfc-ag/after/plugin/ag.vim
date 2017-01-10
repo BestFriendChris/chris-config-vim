@@ -1,9 +1,10 @@
 if executable('ag') && exists('g:loaded_rails')
   augroup ag_bfc_rails
     autocmd!
-    autocmd User Rails nnoremap <buffer> <LocalLeader>aa :Ag<Space><Space>app lib spec
-    autocmd User Rails nnoremap <buffer> <LocalLeader>aaa :Ag<Space><Space>app lib
-    autocmd User Rails nnoremap <buffer> <LocalLeader>aas :Ag<Space><Space>spec
+
+    autocmd User Rails nnoremap <buffer> <LocalLeader>a* :Ag '\b<C-r><C-w>\b' app lib spec
+    autocmd User Rails nnoremap <buffer> <LocalLeader>a*a :Ag '\b<C-r><C-w>\b' app lib
+    autocmd User Rails nnoremap <buffer> <LocalLeader>a*s :Ag '\b<C-r><C-w>\b' spec
 
     autocmd User Rails nnoremap <buffer> <LocalLeader>aw :Ag <C-r><C-w> app lib spec
     autocmd User Rails nnoremap <buffer> <LocalLeader>awa :Ag <C-r><C-w> app lib

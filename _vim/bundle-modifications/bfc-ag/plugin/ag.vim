@@ -5,6 +5,7 @@ if executable('ag')
   command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
   nnoremap <Leader>aa :Ag<Space>
   nnoremap <Leader>aw :Ag <C-r><C-w><Space>
+  nnoremap <Leader>a* :Ag '\b<C-r><C-w>\b'<Space>
   nnoremap <Leader>aW :Ag <C-r><C-a><Space>
   vnoremap <Leader>aw y:Ag <C-r>"<Space>
 endif
