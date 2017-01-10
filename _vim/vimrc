@@ -58,7 +58,8 @@ let maplocalleader=","
 "--------------------------------------------------------------------------------
 
 " Don't use Ex mode, use Q for quitting when saved
-nmap Q :bd<CR>
+nmap Q :q<CR>
+nmap <Leader>Q :bw<CR>
 
 " Navigate between windows easier
 map <C-J> <C-W>j
