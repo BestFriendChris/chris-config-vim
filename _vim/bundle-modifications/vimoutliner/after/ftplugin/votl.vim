@@ -33,6 +33,8 @@ nnoremap <buffer> <LocalLeader>o             o<C-r>=<SID>MaybeCBText()<CR>
 nnoremap <buffer> <LocalLeader><Return>      o<C-r>=<SID>MaybeCBText()<CR>
 inoremap <buffer> <LocalLeader><Return> <ESC>o<C-r>=<SID>MaybeCBText()<CR>
 
+nnoremap <buffer> <Space> za
+
 " These mappings are overridding my mappings. :-(
 unmap <buffer>   <C-K>
 unmap <buffer>   <C-N>
