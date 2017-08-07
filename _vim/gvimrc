@@ -1,0 +1,23 @@
+" Copy path to system clipboard
+nnoremap cp :let @* = expand("%")<CR>:echo expand("%")<CR>
+
+if has('gui_running')
+  set guifont=Operator\ Mono\ SSm:h11,Triplicate\ T3c:h12,Source\ Code\ Pro:h12,Menlo\ Regular:h11
+  highlight Comment gui=italic
+
+"  Fonts with Coding Ligatures
+"  set macligatures
+"
+"  set guifont=Fira\ Code:h12
+"  set guifont=Source\ Code\ Pro:h12
+"  set guifont=PragmataPro:h12
+"  set guifont=InputMono\ ExLight:h11 { }
+"  set guifont=Triplicate\ T3c:h12
+
+
+"  map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+"        \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+"        \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+endif
+
+
