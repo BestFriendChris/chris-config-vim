@@ -18,6 +18,9 @@ set incsearch           " do incremental searching
 set hlsearch            " search highlighting
 set ignorecase          " Case doesn't matter
 set smartcase           " ... until it does
+                        " ... except for case sensitive word searches
+nnoremap * /\C\<<C-R>=expand('<cword>')<CR>\><CR>
+nnoremap # ?\C\<<C-R>=expand('<cword>')<CR>\><CR>
 
 set switchbuf=useopen,usetab,split " Open buffers in new split
 set hidden              " Keep buffers open in the background
