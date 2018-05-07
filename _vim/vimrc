@@ -146,6 +146,9 @@ nnoremap <Leader>[ :ptjump <C-R><C-W><CR>
 " Toggle fold
 nnoremap z<Space> zA
 
+" Toggle winheight
+nnoremap <silent> <C-W><Space> :let &winheight=( &winheight == 999 ? 1 : 999)<CR><C-W>=
+
 "--------------------------------------------------------------------------------
 " AUTOCMD
 "--------------------------------------------------------------------------------
