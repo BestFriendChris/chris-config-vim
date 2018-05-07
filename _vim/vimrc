@@ -163,5 +163,5 @@ autocmd BufReadPost *
 
 " Current issue with MacVim on High Sierra loading ruby
 if !has("ruby")
-  set rubydll=libruby.2.3.0.dylib
+  set rubydll=libruby.2.4.1.dylib
 endif
