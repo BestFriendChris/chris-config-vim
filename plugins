@@ -27,3 +27,4 @@ vim-surround,https://github.com/tpope/vim-surround.git,2d05440ad23f97a7874ebd9b5
 vim-unimpaired,https://github.com/tpope/vim-unimpaired.git,11dc568dbfd7a56866a4354c737515769f08e9fe
 vimoutliner,https://github.com/vimoutliner/vimoutliner.git,cb41cfd6d636e1243e7e9c46b35fc5cb50588069
 vimproc.vim,https://github.com/Shougo/vimproc.vim.git,25cb83f24edec4aec1e9f1329302235e7a7a7fe0
+vimwiki,https://github.com/vimwiki/vimwiki.git,4831384ab9f1c40c9e433857d958c4d9a7beb8ec
