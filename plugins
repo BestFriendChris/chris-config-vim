@@ -3,6 +3,7 @@ ctrlp,https://github.com/kien/ctrlp.vim,b5d3fe66a58a13d2ff8b6391f4387608496a030f
 elm-vim,https://github.com/ElmCast/elm-vim.git,353d5f7a68b6c1eb06d504854887ab9853168b8e
 purescript-vim,https://github.com/raichoo/purescript-vim.git,2c55bcefd63bc40ed2aa9d6ce9d89a590dfa3477
 syntastic,https://github.com/scrooloose/syntastic.git,59cc80a8f7f7544a364814622dc62efd00d17ca4
+taskwiki,https://github.com/tbabej/taskwiki,ffe53db9cff202567d5f7daf27ba50c6649ed0df
 tsuquyomi,https://github.com/Quramy/tsuquyomi.git,c8798618745743be53babf7105729ff531d3dcce
 typescript-vim,https://github.com/leafgarland/typescript-vim.git,7e25a901af7cd993498cc9ecfc833ca2ac21db7a
 vim-airline,https://github.com/bling/vim-airline.git,2637e3ee58856f42cafa0f0094215e6d85d409dd
@@ -27,4 +28,4 @@ vim-surround,https://github.com/tpope/vim-surround.git,2d05440ad23f97a7874ebd9b5
 vim-unimpaired,https://github.com/tpope/vim-unimpaired.git,11dc568dbfd7a56866a4354c737515769f08e9fe
 vimoutliner,https://github.com/vimoutliner/vimoutliner.git,cb41cfd6d636e1243e7e9c46b35fc5cb50588069
 vimproc.vim,https://github.com/Shougo/vimproc.vim.git,25cb83f24edec4aec1e9f1329302235e7a7a7fe0
-vimwiki,https://github.com/vimwiki/vimwiki.git,4831384ab9f1c40c9e433857d958c4d9a7beb8ec
+vimwiki,https://github.com/vimwiki/vimwiki.git,9b744b42b1eb7b715ea52b3a930668127d9cfcfc
