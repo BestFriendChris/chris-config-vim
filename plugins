@@ -1,6 +1,7 @@
 YouCompleteMe,https://github.com/Valloric/YouCompleteMe.git,f928f7dd975d26b608d5310a9139dc5fc310e4a9
 ctrlp,https://github.com/kien/ctrlp.vim,b5d3fe66a58a13d2ff8b6391f4387608496a030f
 elm-vim,https://github.com/ElmCast/elm-vim.git,353d5f7a68b6c1eb06d504854887ab9853168b8e
+emmet,https://github.com/mattn/emmet-vim.git,fb31b5dbb653cee276b57bc98af802a3aeed64fd
 purescript-vim,https://github.com/raichoo/purescript-vim.git,2c55bcefd63bc40ed2aa9d6ce9d89a590dfa3477
 syntastic,https://github.com/scrooloose/syntastic.git,59cc80a8f7f7544a364814622dc62efd00d17ca4
 taskwiki,https://github.com/tbabej/taskwiki,ffe53db9cff202567d5f7daf27ba50c6649ed0df
