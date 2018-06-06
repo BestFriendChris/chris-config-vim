@@ -7,6 +7,7 @@ syntastic,https://github.com/scrooloose/syntastic.git,59cc80a8f7f7544a364814622d
 taskwiki,https://github.com/tbabej/taskwiki,ffe53db9cff202567d5f7daf27ba50c6649ed0df
 tsuquyomi,https://github.com/Quramy/tsuquyomi.git,c8798618745743be53babf7105729ff531d3dcce
 typescript-vim,https://github.com/leafgarland/typescript-vim.git,7e25a901af7cd993498cc9ecfc833ca2ac21db7a
+vim-addon-local-vimrc,https://github.com/MarcWeber/vim-addon-local-vimrc.git,6a27f95b35befa70cd0d049329cd0920566c764b
 vim-airline,https://github.com/bling/vim-airline.git,2637e3ee58856f42cafa0f0094215e6d85d409dd
 vim-bundler,https://github.com/tpope/vim-bundler.git,b42217a20cd4cac5a00096dc4e98d2497c21b3fe
 vim-commentary,https://github.com/tpope/vim-commentary.git,73e0d9a9d1f51b6cc9dc965f62669194ae851cb1
